@@ -1,0 +1,8 @@
+<div class="diary">
+  <app-get-error></app-get-error>
+  <p *ngIf="loading" class="diary__loading">Загрузка...</p>
+  <app-task class="diary__main-content"
+  *ngFor="let task of tasks"
+  [task]="task"
+  ></app-task>
+</div>

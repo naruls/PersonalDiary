@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PopupService } from './services/popup.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Personal_diary';
+  title = 'Персональный дневник';
+
+  constructor(
+    public popupService: PopupService
+    ) {
+  }
+
 }

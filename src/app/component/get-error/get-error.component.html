@@ -1,0 +1,5 @@
+<div *ngIf="errorService.error$ | async as error" class="get-error">
+  {{error}}
+  <button class="get-error__button" (click)="errorService.clear()">&times;</button>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="editor">
+  <form *ngIf="data" [formGroup]="form" (ngSubmit)="submit()" class="editor__form">
+    <p class="editor__title">Введите исправления</p>
+    <div class="editor__input-block">
+      <p class="editor__input-name">Запись</p>
+      <input formControlName="task" class="editor__input" placeholder="Заметка">
+      <span *ngIf="task.errors?.minlength && task.touched" class="editor__input-error">safad</span>
+    </div>
+    <div class="editor__input-block">
+      <p class="editor__input-name">Ссылка на изображение</p>
+      <input formControlName="img" class="editor__input" placeholder="Ссылка на изображение">
+      <span *ngIf="img.errors?.pattern && img.touched" class="editor__input-error">safad</span>
+    </div>
+    <button class="editor__submit-button" type="submit">Сохранить изменения</button>
+  </form>
+  <button class="editor__close-button" (click)="closeEditor()">Вернуться</button>
+</div>

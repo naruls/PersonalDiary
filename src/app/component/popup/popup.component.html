@@ -1,0 +1,16 @@
+<div class="popup__background" (click)="popupService.close()"></div>
+<div class="popup__block">
+  <p class="popup__title">Добавить заметку</p>
+  <button class="popup__close-button" (click)="popupService.close()">&times;</button>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="popup__form">
+    <div class="popup__input-block">
+      <input formControlName="task" class="popup__input" placeholder="Заметка">
+      <span *ngIf="task.errors?.minlength && task.touched" class="popup__input-error">Запись в дневнике должна содержать больше 4 символов</span>
+    </div>
+    <div class="popup__input-block">
+      <input formControlName="img" class="popup__input" placeholder="Ссылка на изображение">
+      <span *ngIf="img.errors?.pattern && img.touched" class="popup__input-error">Необходимо ввести ссылку</span>
+    </div>
+      <button class="popup__submit-button" type="submit">Сохранить</button>
+  </form>
+</div>
