@@ -60,3 +60,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+.login__submit-button:disabled {
+  background-color: rgb(170, 170, 170);
+}

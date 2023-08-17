@@ -57,7 +57,6 @@ export class EditorComponent {
         img: this.form.value.img as string,
         date: this.data?.date as any
       }, id)
-      console.log(this.form.value)
       this.closeEditor();
     }
 

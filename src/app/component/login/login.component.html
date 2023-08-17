@@ -9,6 +9,6 @@
       <input formControlName="password" class="login__input" placeholder="Пароль" type="password">
       <span *ngIf="password.errors?.minlength && password.touched" class="login__input-error">Пароль должен содержать больше 7 символов</span>
     </div>
-    <button class="login__submit-button" type="submit">Войти</button>
+    <button [disabled]="form.invalid" (click)="login()" class="login__submit-button" type="submit">Войти</button>
   </form>
 </div>

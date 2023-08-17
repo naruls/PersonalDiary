@@ -49,7 +49,8 @@ const firebaseConfig = {
     provideFirestore(() => getFirestore()),
     FormsModule,
     ReactiveFormsModule,
-
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [TasksApi],
   bootstrap: [AppComponent]
