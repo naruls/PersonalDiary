@@ -1,0 +1,14 @@
+<div class="login">
+  <p class="login__title">Вход</p>
+  <form [formGroup]="form" class="login__form">
+    <div class="login__input-block">
+      <input formControlName="email" class="login__input" placeholder="Email">
+      <span *ngIf="email.errors?.email && email.touched" class="login__input-error">Введите email</span>
+    </div>
+    <div class="login__input-block">
+      <input formControlName="password" class="login__input" placeholder="Пароль" type="password">
+      <span *ngIf="password.errors?.minlength && password.touched" class="login__input-error">Пароль должен содержать больше 7 символов</span>
+    </div>
+    <button class="login__submit-button" type="submit">Войти</button>
+  </form>
+</div>

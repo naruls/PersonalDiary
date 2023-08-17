@@ -12,5 +12,5 @@ export class HeaderComponent {
   constructor(
     public popupService: PopupService
   ) {}
-
+  isValid = true;
 }

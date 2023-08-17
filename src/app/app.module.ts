@@ -12,9 +12,13 @@ import { TaskComponent } from './component/task/task.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+
 import { TasksApi } from './services/tasks.service';
 import { PopupComponent } from './component/popup/popup.component';
 import { EditorComponent } from './component/editor/editor.component';
+import { LoginComponent } from './component/login/login.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJ3izSaco9eztpsQ_IEBGglgzRsQNf0wk",
@@ -34,7 +38,8 @@ const firebaseConfig = {
     HeaderComponent,
     GetErrorComponent,
     PopupComponent,
-    EditorComponent
+    EditorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ const firebaseConfig = {
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [TasksApi],
   bootstrap: [AppComponent]

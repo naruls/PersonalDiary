@@ -27,6 +27,14 @@
   justify-content:center;
 }
 
+.header__button_hiden {
+  display: none;
+}
+
+.header__button:last-of-type {
+  margin: auto 20px auto auto;
+}
+
 .header__button:hover{
   opacity: 0.8;
 }
