@@ -12,8 +12,9 @@ import { TaskComponent } from './component/task/task.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import {AngularFireModule} from '@angular/fire/compat';
-import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { InfiniteScrollModule } from "ngx-infinite-scroll"
 
 import { TasksApi } from './services/tasks.service';
 import { PopupComponent } from './component/popup/popup.component';
@@ -50,7 +51,8 @@ const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    InfiniteScrollModule
   ],
   providers: [TasksApi],
   bootstrap: [AppComponent]

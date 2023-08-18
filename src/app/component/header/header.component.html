@@ -1,6 +1,5 @@
 <div class="header">
-  <button class="header__button" (click)="popupService.open()">Создать</button>
+  <button *ngIf="isLogin" class="header__button" (click)="popupService.open()">Создать</button>
   <h1 class="header__title">Персональный дневник</h1>
-  <button class="header__button" [ngClass]="{'header__button_hiden': isValid}">Войти</button>
-  <button class="header__button" [ngClass]="{'header__button_hiden': !isValid}">Выйти</button>
+  <button *ngIf="isLogin" (click)="logout()" class="header__button">Выйти</button>
 </div>

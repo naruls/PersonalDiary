@@ -14,8 +14,10 @@ export class TasksApi {
       private errorService: ErrorService,
     ) {
   }
+
   getTasks() : Observable<any> {
-    let taskCollection = collection(this.fs, 'tasks');
+    const emailUser = localStorage.getItem("email");
+    let taskCollection = collection(this.fs, `tasks${emailUser}`);
     return (collectionData(taskCollection, {idField:'id'}))
     .pipe(
       catchError(this.errorHandler.bind(this))
@@ -23,7 +25,8 @@ export class TasksApi {
   }
 
   createTask(task: ITask) {
-    let newTasks = collection(this.fs, 'tasks');
+    const emailUser = localStorage.getItem("email");
+    let newTasks = collection(this.fs, `tasks${emailUser}`);
     return (addDoc(newTasks, task));
   }
 
@@ -33,12 +36,14 @@ export class TasksApi {
   }
 
   deleteTask(id:string) {
-    let idRef=doc(this.fs, 'tasks/'+id);
+    const emailUser = localStorage.getItem("email");
+    let idRef=doc(this.fs, `tasks${emailUser}/`+id);
     return deleteDoc(idRef)
   }
 
   editTask(task: ITask, id:any) {
-    let newTasks = collection(this.fs, 'tasks');
+    const emailUser = localStorage.getItem("email");
+    let newTasks = collection(this.fs, `tasks${emailUser}`);
     return (updateDoc(doc(newTasks, id), {
       task: task.task,
       img: task.img,

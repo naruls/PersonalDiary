@@ -23,7 +23,6 @@ export class DiaryComponent {
         return x.date - y.date
       }).reverse();
       this.loading = false;
-      console.log(tasks)
     })
   }
 
