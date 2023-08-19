@@ -42,13 +42,19 @@ export class EditorComponent {
       return this.form.controls.img as FormControl
     }
 
+  // форма для редактирования задачи с тремя переменными, две из которых с отслеживаются в реальном времени и валидируются
+
     ngOnInit(): void {
       this.data = this.currentTaskService.getCurrentTask();
     }
 
-    public closeEditor() {
+    // функция получения и записи данных о выбранной задаче
+
+    closeEditor() {
       this.router.navigate(['main']);
     }
+
+    // функция закрытия страницы редактирования и возвращения на главную
 
     submit() {
       let id = this.data?.id
@@ -60,4 +66,8 @@ export class EditorComponent {
       this.closeEditor();
     }
 
+    // функция отправки формы
+
 }
+
+// компонент, что отвечает за страницу редактирования задачи

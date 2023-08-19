@@ -37,12 +37,20 @@ export class PopupComponent {
     return this.form.controls.img as FormControl
   }
 
+  // форма для создания задачи с тремя переменными, две из которых с отслеживаются в реальном времени и валидируются
+
   submit() {
     this.tasksApi.createTask({
       task: this.form.value.task as string,
       img: this.form.value.img as string,
       date: this.form.value.date as Timestamp
     })
-    this.popupService.close()
+    .catch((err)=> console.log(err))
+    .finally(()=> this.popupService.close())
   }
+
+  // функция отправки формы
+
 }
+
+// компонент, что отвечает за высплывающее окно создания новой задачи

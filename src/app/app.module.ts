@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GetErrorComponent } from './component/get-error/get-error.component';
 import { TaskComponent } from './component/task/task.component';
 
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -21,6 +21,8 @@ import { PopupComponent } from './component/popup/popup.component';
 import { EditorComponent } from './component/editor/editor.component';
 import { LoginComponent } from './component/login/login.component';
 
+// Подключение всех необходимых для работы spa компонентов/модулей/сервисов
+
 const firebaseConfig = {
   apiKey: "AIzaSyDJ3izSaco9eztpsQ_IEBGglgzRsQNf0wk",
   authDomain: "personaldialy.firebaseapp.com",
@@ -30,6 +32,8 @@ const firebaseConfig = {
   appId: "1:971341411499:web:7394c509db3fb9e55cf3ee",
   measurementId: "G-H9J91Z4PKT"
 };
+
+// Конфиг для работы с firebase
 
 @NgModule({
   declarations: [
@@ -57,4 +61,5 @@ const firebaseConfig = {
   providers: [TasksApi],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

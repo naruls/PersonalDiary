@@ -16,12 +16,8 @@ export class HeaderComponent {
     public popupService: PopupService,
     private router: Router,
     private auth: AngularFireAuth,
-    private isLoginService: IsLoginService
-  ) {
-    isLoginService.isLogin.subscribe(value => {this.isLogin = value })
-  }
-
-  isLogin = localStorage.getItem('email') !== null;
+    public isLoginService: IsLoginService
+  ) {}
 
   logout() {
     this.auth.signOut();
@@ -30,4 +26,8 @@ export class HeaderComponent {
     this.isLoginService.isLogin.next(false);
   }
 
+  // функция, что отвечает за выход пользователя и удаление данных из localStorage
+
 }
+
+// компонент, что отвечает за "шапку" приложения

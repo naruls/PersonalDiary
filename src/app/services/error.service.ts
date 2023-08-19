@@ -16,3 +16,5 @@ export class ErrorService {
   }
 
 }
+
+// сервис, что отвечает за отображение ошибки get после обращения к firebase

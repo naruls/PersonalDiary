@@ -1,5 +1,5 @@
 <div class="header">
-  <button *ngIf="isLogin" class="header__button" (click)="popupService.open()">Создать</button>
+  <button *ngIf="isLoginService.isLogin | async" class="header__button" (click)="popupService.open()">Создать</button>
   <h1 class="header__title">Персональный дневник</h1>
-  <button *ngIf="isLogin" (click)="logout()" class="header__button">Выйти</button>
+  <button *ngIf="isLoginService.isLogin | async" (click)="logout()" class="header__button">Выйти</button>
 </div>

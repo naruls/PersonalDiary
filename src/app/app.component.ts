@@ -13,5 +13,6 @@ export class AppComponent {
     public popupService: PopupService
     ) {
   }
-
 }
+
+// app компонент с единственным подключенным сервисом, что отвечает за отображение popup

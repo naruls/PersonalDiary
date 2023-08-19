@@ -15,7 +15,9 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router,
     private isLoginService: IsLoginService
-    ) {}
+    ) { }
+
+  loginError = false;
 
   form = new FormGroup({
     email: new FormControl<string>('', [
@@ -36,15 +38,28 @@ export class LoginComponent {
     return this.form.controls.password as FormControl
   }
 
+  // форма для авторизации с двумя переменными, две из которых с отслеживаются в реальном времени и валидируются
+
   login() {
     const userData = Object.assign(this.form.value)
     this.authService.sign(userData).then((res:any) => {
       this.router.navigate(['main']);
       localStorage.setItem("email", res.user._delegate.email);
-      this.isLoginService.isLogin.next(true);
+      this.isLoginService.setIsLogin();
     }).catch((err: any) => {
       console.log(err)
+      this.loginError = true;
     })
   }
 
+// функция отправки формы, для авторизации пользователя
+
+  hideLoginErorr() {
+    this.loginError = false;
+  }
+
+  // функция, что отвечает за отображение сообщения об ошибки авторизации
+
 }
+
+// компонент, что отвечает за страницу авторизации

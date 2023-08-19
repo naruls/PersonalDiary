@@ -11,6 +11,6 @@
       <input formControlName="img" class="popup__input" placeholder="Ссылка на изображение">
       <span *ngIf="img.errors?.pattern && img.touched" class="popup__input-error">Необходимо ввести ссылку</span>
     </div>
-      <button class="popup__submit-button" type="submit">Сохранить</button>
+      <button [disabled]="form.invalid" class="popup__submit-button" type="submit">Сохранить</button>
   </form>
 </div>

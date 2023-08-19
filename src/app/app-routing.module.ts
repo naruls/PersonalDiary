@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent}
 ];
 
+// настройка путей и редиректов при переходе по умолчанию, на пути main настройка защиты от перехода при отсутствии авторизации пользователя
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

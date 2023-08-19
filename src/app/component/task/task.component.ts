@@ -19,14 +19,20 @@ export class TaskComponent {
     private taskApi: TasksApi
     ) {}
 
-  public async openEditor(task: ITask) {
-    await this.router.navigate(['task-editor']);
+  openEditor(task: ITask) {
+    this.router.navigate(['task-editor']);
     this.currentTaskService.setCurrentTask(task);
   }
+
+  // функция, что отвечает за открытие окна редактирования выбранной задачи
 
   deleteTask(id: any) {
     this.taskApi.deleteTask(id).then((res)=>{
     })
   }
 
+  // функция, что отвечает за удаление выбранной задачи
+
 }
+
+// компонент, что отвечает за одну задачу

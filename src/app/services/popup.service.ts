@@ -16,3 +16,5 @@ export class PopupService {
   }
 
 }
+
+// сервис для изменения отображения popup

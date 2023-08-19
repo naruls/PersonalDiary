@@ -45,6 +45,11 @@
   color: red;
 }
 
+.login__error {
+  color: red;
+  margin: 0 auto;
+}
+
 .login__submit-button {
   margin: 0 auto;
   width: 300px;

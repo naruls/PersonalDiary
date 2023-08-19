@@ -6,3 +6,6 @@ export interface ITask {
   task: string,
   img: string
 }
+
+
+// модель для задачи
