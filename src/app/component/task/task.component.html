@@ -1,0 +1,7 @@
+<div class="task">
+  <p class="task__create-date">{{task.date.toDate() | date:'HH:mm yyyy/MM/dd'}}</p>
+  <button class="task__delete-button" (click)="deleteTask(task.id)"><img title="удалить запись" class="task__delete-image" src="../../../assets/Trash.svg" alt="Удалить"></button>
+  <button class="task__edit-button" (click)="openEditor(task)"><img title="редактировать запись" class="task__edit-image" src="../../../assets/Edit_Button.svg" alt="Редактировать"></button>
+  <p class="task__description">{{ task.task }}</p>
+  <img class="task__image" [src]="task.img" [alt]="task.task" >
+</div>
